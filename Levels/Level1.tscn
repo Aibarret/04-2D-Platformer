@@ -1,0 +1,478 @@
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://Assets/Sky Spritesheet.png" type="Texture" id=1]
+[ext_resource path="res://Camera.gd" type="Script" id=2]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Art is hard (1).png" type="Texture" id=4]
+[ext_resource path="res://Enemy/Enemy_Ground.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Enemy/Enemy_Flying.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Player/Player_Container .gd" type="Script" id=7]
+[ext_resource path="res://Hud/UI.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Coin/Coin.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Levels/Portal.gd" type="Script" id=10]
+[ext_resource path="res://Enemy/Coin_Container.gd" type="Script" id=11]
+[ext_resource path="res://Enemy/Enemy_Container.gd" type="Script" id=12]
+
+[sub_resource type="TileSet" id=1]
+0/name = "Sky Spritesheet.png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "Sky Spritesheet.png 1"
+1/texture = ExtResource( 1 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 0.52549, 0.52549, 0.52549, 1 )
+1/region = Rect2( 64, 0, 64, 64 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "Sky Spritesheet.png 2"
+2/texture = ExtResource( 1 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 0.521569, 0.521569, 0.521569, 1 )
+2/region = Rect2( 128, 0, 64, 64 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "Sky Spritesheet.png 3"
+3/texture = ExtResource( 1 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 0.486275, 0.486275, 0.486275, 1 )
+3/region = Rect2( 192, 0, 64, 64 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+4/name = "Sky Spritesheet.png 4"
+4/texture = ExtResource( 1 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 0.564706, 0.564706, 0.564706, 1 )
+4/region = Rect2( 0, 64, 64, 64 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
+5/name = "Sky Spritesheet.png 5"
+5/texture = ExtResource( 1 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 0, 128, 64, 64 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_one_way = false
+5/shape_one_way_margin = 0.0
+5/shapes = [  ]
+5/z_index = 0
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+points = PoolVector2Array( 0, 64, 0, 64, 32, 32, 64, 0, 64, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=9]
+points = PoolVector2Array( 0, 64, 0, 64, 64, 0, 64, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=10]
+points = PoolVector2Array( 0, 64, 0, 64, 64, 0, 64, 64 )
+
+[sub_resource type="TileSet" id=11]
+0/name = "Sky Spritesheet.png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 2 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "Sky Spritesheet.png 1"
+1/texture = ExtResource( 1 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 64, 64, 64, 64 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 3 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+2/name = "Sky Spritesheet.png 2"
+2/texture = ExtResource( 1 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 128, 64, 64, 64 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape = SubResource( 4 )
+2/shape_one_way = false
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+2/z_index = 0
+3/name = "Sky Spritesheet.png 3"
+3/texture = ExtResource( 1 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 192, 64, 64, 64 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape = SubResource( 5 )
+3/shape_one_way = false
+3/shape_one_way_margin = 1.0
+3/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+3/z_index = 0
+4/name = "Sky Spritesheet.png 4"
+4/texture = ExtResource( 1 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 0, 128, 64, 64 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape = SubResource( 6 )
+4/shape_one_way = false
+4/shape_one_way_margin = 1.0
+4/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+4/z_index = 0
+5/name = "Sky Spritesheet.png 5"
+5/texture = ExtResource( 1 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 64, 128, 64, 64 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape = SubResource( 7 )
+5/shape_one_way = false
+5/shape_one_way_margin = 1.0
+5/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 7 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+5/z_index = 0
+6/name = "Sky Spritesheet.png 6"
+6/texture = ExtResource( 1 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 128, 128, 64, 64 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape = SubResource( 8 )
+6/shape_one_way = false
+6/shape_one_way_margin = 1.0
+6/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 8 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+6/z_index = 0
+7/name = "Sky Spritesheet.png 7"
+7/texture = ExtResource( 1 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 192, 128, 64, 64 )
+7/tile_mode = 0
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 0, 0 )
+7/shape_offset = Vector2( 0, 0 )
+7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+7/shape = SubResource( 9 )
+7/shape_one_way = false
+7/shape_one_way_margin = 1.0
+7/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 9 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+7/z_index = 0
+8/name = "Sky Spritesheet.png 8"
+8/texture = ExtResource( 1 )
+8/tex_offset = Vector2( 0, 0 )
+8/modulate = Color( 1, 1, 1, 1 )
+8/region = Rect2( 0, 192, 64, 64 )
+8/tile_mode = 0
+8/occluder_offset = Vector2( 0, 0 )
+8/navigation_offset = Vector2( 0, 0 )
+8/shape_offset = Vector2( 0, 0 )
+8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+8/shape = SubResource( 10 )
+8/shape_one_way = false
+8/shape_one_way_margin = 1.0
+8/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 10 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+8/z_index = 0
+9/name = "Sky Spritesheet.png 9"
+9/texture = ExtResource( 1 )
+9/tex_offset = Vector2( 0, 0 )
+9/modulate = Color( 1, 1, 1, 1 )
+9/region = Rect2( 192, 0, 64, 64 )
+9/tile_mode = 0
+9/occluder_offset = Vector2( 0, 0 )
+9/navigation_offset = Vector2( 0, 0 )
+9/shape_offset = Vector2( 0, 0 )
+9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+9/shape_one_way = false
+9/shape_one_way_margin = 0.0
+9/shapes = [  ]
+9/z_index = 0
+
+[sub_resource type="TileSet" id=12]
+1/name = "Sky Spritesheet.png 1"
+1/texture = ExtResource( 1 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 64, 64, 64, 64 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "Sky Spritesheet.png 2"
+2/texture = ExtResource( 1 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 192, 64, 64, 64 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "Sky Spritesheet.png 3"
+3/texture = ExtResource( 1 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 0, 0, 64, 64 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 128, 32 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 32, 128 )
+
+[sub_resource type="CircleShape2D" id=15]
+radius = 16384.0
+
+[node name="Game" type="Node2D"]
+
+[node name="Background_Image" type="Sprite" parent="."]
+position = Vector2( 728, 280 )
+texture = ExtResource( 4 )
+
+[node name="Background" type="TileMap" parent="."]
+tile_set = SubResource( 1 )
+format = 1
+tile_data = PoolIntArray( 65537, 536870913, 0, 65538, 536870913, 0, 65539, 536870913, 0, 65540, 536870913, 0, 65541, 536870913, 0, 65542, 536870913, 0, 65543, 536870913, 0, 65544, 1073741826, 0, 65545, 1073741828, 0, 65548, 536870915, 0, 65549, 536870913, 0, 65550, 536870913, 0, 131073, 536870913, 0, 131074, 536870913, 0, 131075, 536870913, 0, 131076, 536870913, 0, 131077, 536870913, 0, 131078, 1073741826, 0, 131079, -2147483645, 0, 131080, 1073741828, 0, 131084, 536870915, 0, 131085, 536870913, 0, 131086, 536870913, 0, 196609, 536870913, 0, 196610, 536870913, 0, 196611, 536870913, 0, 196612, 536870913, 0, 196613, 536870913, 0, 196614, 1073741827, 0, 196620, 536870915, 0, 196621, 536870913, 0, 196622, 536870913, 0, 262145, 536870913, 0, 262146, 536870913, 0, 262147, 536870913, 0, 262148, 536870913, 0, 262149, 536870913, 0, 262150, 1073741827, 0, 262156, -2147483644, 0, 262157, -2147483646, 0, 262158, 536870913, 0, 327681, 536870913, 0, 327682, 536870913, 0, 327683, 536870913, 0, 327684, 536870913, 0, 327685, 536870913, 0, 327686, -536870910, 0, 327687, -536870909, 0, 327688, -536870909, 0, 327689, -536870909, 0, 327690, -536870909, 0, 327691, 536870914, 0, 327692, -536870910, 0, 327693, 536870914, 0, 327694, 536870913, 0, 393217, 536870913, 0, 393218, 536870913, 0, 393219, 536870913, 0, 393220, 536870913, 0, 393221, 536870913, 0, 393222, 536870913, 0, 393223, 536870913, 0, 393224, 536870913, 0, 393225, 536870913, 0, 393226, 536870913, 0, 393227, 536870913, 0, 393228, 536870913, 0, 393229, 536870913, 0, 393230, 536870913, 0, 458753, 536870913, 0, 458754, 536870913, 0, 458755, 536870913, 0, 458756, 536870913, 0, 458757, 536870913, 0, 458758, 536870913, 0, 458759, 536870913, 0, 458760, 536870913, 0, 458761, 536870913, 0, 458762, 536870913, 0, 458763, 536870913, 0, 458764, 536870913, 0, 458765, 536870913, 0, 458766, 536870913, 0 )
+
+[node name="Ground" type="TileMap" parent="."]
+tile_set = SubResource( 11 )
+collision_layer = 2
+format = 1
+tile_data = PoolIntArray( 0, 536870912, 0, 1, 536870912, 0, 2, 536870912, 0, 3, 536870912, 0, 4, 536870912, 0, 5, 536870912, 0, 6, 536870912, 0, 7, 536870912, 0, 8, 536870912, 0, 9, 536870912, 0, 10, 536870912, 0, 11, 536870912, 0, 12, 536870912, 0, 13, 536870912, 0, 14, 536870912, 0, 15, 536870912, 0, 65536, 536870912, 0, 65551, 536870912, 0, 131072, 536870912, 0, 131087, 536870912, 0, 196608, 536870912, 0, 196623, 536870912, 0, 262144, 536870912, 0, 262159, 536870912, 0, 262160, 0, 0, 262161, 0, 0, 262162, 0, 0, 262163, 0, 0, 262164, 0, 0, 327680, 536870912, 0, 393216, 536870912, 0, 458752, 536870912, 0, 458767, 536870912, 0, 458768, 0, 0, 458769, 0, 0, 458770, 0, 0, 458771, 0, 0, 458772, 0, 0, 524288, 536870912, 0, 524289, 536870912, 0, 524290, 536870912, 0, 524291, 536870912, 0, 524292, 536870912, 0, 524293, 536870912, 0, 524294, 536870912, 0, 524295, 536870912, 0, 524296, 536870912, 0, 524297, 536870912, 0, 524298, 536870912, 0, 524299, 536870912, 0, 524300, 536870912, 0, 524301, 536870912, 0, 524302, 536870912, 0, 524303, 536870912, 0 )
+
+[node name="Platform" type="TileMap" parent="."]
+tile_set = SubResource( 12 )
+collision_layer = 2
+format = 1
+tile_data = PoolIntArray( 131077, 3, 0, 196613, 3, 0, 262149, 3, 0, 327685, 3, 0, 393221, 3, 0, 393222, 3, 0, 393223, 3, 0, 393224, 3, 0 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Platform"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform/StaticBody2D"]
+position = Vector2( 448, 416 )
+shape = SubResource( 13 )
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Platform/StaticBody2D"]
+position = Vector2( 352, 256 )
+shape = SubResource( 14 )
+one_way_collision = true
+
+[node name="Player_Container" type="Node2D" parent="."]
+script = ExtResource( 7 )
+
+[node name="Player" parent="Player_Container" instance=ExtResource( 3 )]
+position = Vector2( 85, 462 )
+
+[node name="Enemy_Container" type="Node2D" parent="."]
+script = ExtResource( 12 )
+
+[node name="Enemy_Flying" parent="Enemy_Container" instance=ExtResource( 6 )]
+position = Vector2( 930.049, 67.029 )
+
+[node name="Enemy_Ground" parent="Enemy_Container" instance=ExtResource( 5 )]
+position = Vector2( 944.048, 177.11 )
+max_constraint = 950
+min_constraint = 800
+
+[node name="Coin_Container" type="Node2D" parent="."]
+script = ExtResource( 11 )
+
+[node name="Coin" parent="Coin_Container" instance=ExtResource( 9 )]
+position = Vector2( 228.418, 353.009 )
+
+[node name="Coin2" parent="Coin_Container" instance=ExtResource( 9 )]
+position = Vector2( 540.84, 354.897 )
+
+[node name="Coin3" parent="Coin_Container" instance=ExtResource( 9 )]
+position = Vector2( 352.03, 483.325 )
+
+[node name="Portal_to_2" type="Area2D" parent="."]
+scale = Vector2( 1e-05, 1e-05 )
+script = ExtResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal_to_2"]
+position = Vector2( 1.29599e+08, 3.84e+07 )
+scale = Vector2( 500, 500 )
+shape = SubResource( 15 )
+one_way_collision_margin = 0.0
+
+[node name="Foreground" type="TileMap" parent="."]
+format = 1
+
+[node name="Camera" type="Camera2D" parent="."]
+current = true
+limit_left = 0
+limit_top = 0
+limit_bottom = 630
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+drag_margin_left = 0.1
+drag_margin_top = 0.1
+drag_margin_right = 0.1
+drag_margin_bottom = 0.1
+script = ExtResource( 2 )
+
+[node name="UI" parent="." instance=ExtResource( 8 )]
+[connection signal="body_entered" from="Portal_to_2" to="Portal_to_2" method="_on_Portal_entered"]
