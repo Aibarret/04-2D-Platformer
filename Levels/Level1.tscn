@@ -453,7 +453,7 @@ scale = Vector2( 1e-05, 1e-05 )
 script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal_to_2"]
-position = Vector2( 1.29599e+08, 3.84e+07 )
+position = Vector2( 1.07201e+08, 3.84e+07 )
 scale = Vector2( 500, 500 )
 shape = SubResource( 15 )
 one_way_collision_margin = 0.0
