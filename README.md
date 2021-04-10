@@ -21,7 +21,7 @@ Includes WASD mappings (up, left, down, right) and escape to quit.
 
 
 ## References
-class provided player script
+class provided player script,
 Tile-set and enemy sprites created by me
 
 ## Future Development
