@@ -25,11 +25,7 @@ class provided player script
 Tile-set and enemy sprites created by me
 
 ## Future Development
-Animations on Enemies
-Player spritesheet
-Instant death spikes
-Crushing Blocks
-a GUN
+Animations on Enemies, Player spritesheet, Instant death spikes, Crushing Blocks, a GUN
 
 ## Created by 
 Aidan Barrett
